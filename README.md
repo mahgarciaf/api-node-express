@@ -16,4 +16,10 @@ Para que serve o Nodemon?
     >> git config --global user.name "Marielle" 
     >> git config --global user.email "marielle.gfpaulino@gmail.com"
     >> git --list (para sair, usar :q)
-    >> git -init
+    >> git init
+    >> git remote add origin [url do repositório]
+    >> git status
+    >> git add .
+    >> git commit -m "first commit"
+    >> git branch -M main
+    >> git push -u origin main
