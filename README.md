@@ -4,6 +4,8 @@
 O que é o Node.js?
 Para que serve o NPM?
 Para que serve o Nodemon?
+O que é uma API?
+Para que serve o Framework Express?
 
 # Comandos
 
