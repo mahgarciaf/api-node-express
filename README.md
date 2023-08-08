@@ -14,12 +14,20 @@
     >> Biblioteca que ajuda no desenvolvimento e monitora todas as modificações do projeto
 - O que é express?
     >> Pacote ligado ao escopo inteiro do projeto
+- Para que serve a extenção ThunderClient?
+    >> é como se fosse o cliente do projeto
+    >> na maioria dos projetos usa-se outro cliente -> Postman
+    >> tem também o insomnia
 
 # Comandos
+
+obs -> o local host ta sendo usado apenas com o http
+
 
 ### NPM
     >> npm init (cria o package.json com as informações iniciais do projeto)
     >> npm run [nome do script] (roda o comando definido no script do package.json)
+        >> "npm run dev"
 
 
 ### GIT
