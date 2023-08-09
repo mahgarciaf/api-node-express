@@ -1,42 +1,25 @@
 // const express = require('express') -> modo antigo de importar
 import express from 'express'
 import {PORT} from './config.js'
+import userRoute from './router/userRoute.js'
+import productRout from './router/productRoute.js'
 
 const api = express()
 
 // req -> requisição
 // res -> resposta
-api.get('/', (req, res) => {
-    res.json({message: "Bem vindo a API"})
+
+api.get('/', (req, res)=>{   
+    res.json({message: "Bem-vindo a API"})
 })
+
+api.use('/user', userRoute)
+api.use('/product', productRout)
 
 
 // aplicação de exemplo
-//É possível usar uma mesma rota ("/users") mas com aplicações diferentes
-api.get('/users', (req, res) => {
-    const users = [
-        {id: 1, name: "Mari"},
-        {id: 2, name: "Kauan"},
-        {id: 3, name: "Ale"}
-    ]
+//É possível usar uma mesma rota ("/user") mas com aplicações diferentes
 
-    res.json(users)
-})
-
-api.post('/users', (req, res) => {
-    // pegar os dados
-    res.json({message: "Usuário criado com sucesso"})
-})
-
-api.put('/users', (req, res) => {
-    // atualizar os dados / update
-    res.json({message: "Usuário alterado com sucesso"})
-})
-
-api.delete('/users', (req, res) => {
-    // apaga os dados
-    res.json({message: "Usuário deletado com sucesso"})
-})
 
 api.all('/*', (req, res) => {
     // qualquer outra rota que não tenha sido configurada previamente
