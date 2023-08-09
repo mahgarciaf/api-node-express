@@ -26,11 +26,16 @@
             "name": "/product",
             "url": "http://localhost:3000/product",
             "method": "PUT",
-            "sortNum": 20000,
+            "sortNum": 8750,
             "created": "2023-08-09T00:24:43.332Z",
-            "modified": "2023-08-09T00:24:43.332Z",
+            "modified": "2023-08-09T01:23:23.201Z",
             "headers": [],
             "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\": \"cadeira de praia\",\n  \"preço\": 179.90\n}",
+                "form": []
+            },
             "tests": []
         },
         {
@@ -40,11 +45,16 @@
             "name": "/product",
             "url": "http://localhost:3000/product",
             "method": "POST",
-            "sortNum": 30000,
+            "sortNum": 7500,
             "created": "2023-08-09T00:24:52.356Z",
-            "modified": "2023-08-09T00:24:52.356Z",
+            "modified": "2023-08-09T01:15:02.782Z",
             "headers": [],
             "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\": \"cadeira de praia\",\n  \"preço\": 179.90\n}",
+                "form": []
+            },
             "tests": []
         },
         {
@@ -54,11 +64,16 @@
             "name": "/product",
             "url": "http://localhost:3000/product",
             "method": "GET",
-            "sortNum": 40000,
+            "sortNum": 5000,
             "created": "2023-08-09T00:25:21.524Z",
-            "modified": "2023-08-09T00:25:21.524Z",
+            "modified": "2023-08-09T01:24:24.893Z",
             "headers": [],
             "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\": \"cadeira de praia\",\n  \"preço\": 179.90\n}",
+                "form": []
+            },
             "tests": []
         }
     ]

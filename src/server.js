@@ -1,9 +1,12 @@
 // const express = require('express') -> modo antigo de importar
 import express from 'express'
-import {PORT} from './config.js'
+import bodyParser from 'body-parser'
+
 import userRoute from './router/userRoute.js'
 import productRout from './router/productRoute.js'
 import logger from './middlewares/logger.js'
+
+import {PORT} from './config.js'
 
 const api = express()
 
@@ -13,13 +16,14 @@ const api = express()
 
 // usando o middleware em todas as rotas
 api.use(logger)
+api.use(bodyParser.json())
 
 
 api.get('/', (req, res)=>{   
     res.json({message: "Bem-vindo a API"})
 })
 
-api.use('/user', logger, userRoute)
+api.use('/user', userRoute)
 api.use('/product', productRout)
 
 
@@ -31,7 +35,7 @@ api.use('/product', productRout)
 api.all('/*', logger, (req, res) => {
     // qualquer outra rota que não tenha sido configurada previamente
     // erro 404
-    res.json({message: "Rota não encontrada!"})
+    res.status(404).json({message: "Rota não encontrada!"})
 })
 
 

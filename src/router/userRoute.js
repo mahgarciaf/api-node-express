@@ -6,28 +6,35 @@ const router = express.Router()
 //É possível usar uma mesma rota ("/user") mas com aplicações diferentes
 
 router.get('/', (req, res) => {
-    const user = [
-        {id: 1, name: "Mari"},
-        {id: 2, name: "Kauan"},
-        {id: 3, name: "Ale"}
-    ]
-
-    res.json(user)
+    const dados = req.body
+    res.json({
+        message: "Usuários:",
+        dados: dados})
 })
 
 router.post('/', (req, res) => {
-    // pegar os dados
-    res.json({message: "Usuário criado com sucesso"})
+    // pegar os dados / create
+    const dados = req.body
+    console.log(dados.nome)
+    
+    res.json({
+        message: "Usuário criado com sucesso",
+        dados: dados})
 })
 
 router.put('/', (req, res) => {
     // atualizar os dados / update
-    res.json({message: "Usuário alterado com sucesso"})
+    const dados = req.body
+    res.json({
+        message: "Usuário alterado com sucesso",
+        dados: dados})
 })
 
 router.delete('/', (req, res) => {
     // apaga os dados
-    res.json({message: "Usuário deletado com sucesso"})
+    const dados = req.body
+    res.json({message: "Usuário deletado com sucesso",
+    dados: dados})
 })
 
 export default router
