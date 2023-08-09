@@ -3,17 +3,23 @@ import express from 'express'
 import {PORT} from './config.js'
 import userRoute from './router/userRoute.js'
 import productRout from './router/productRoute.js'
+import logger from './middlewares/logger.js'
 
 const api = express()
 
 // req -> requisição
 // res -> resposta
 
+
+// usando o middleware em todas as rotas
+api.use(logger)
+
+
 api.get('/', (req, res)=>{   
     res.json({message: "Bem-vindo a API"})
 })
 
-api.use('/user', userRoute)
+api.use('/user', logger, userRoute)
 api.use('/product', productRout)
 
 
@@ -21,8 +27,10 @@ api.use('/product', productRout)
 //É possível usar uma mesma rota ("/user") mas com aplicações diferentes
 
 
-api.all('/*', (req, res) => {
+//aplicando o middleware em uma rota específica
+api.all('/*', logger, (req, res) => {
     // qualquer outra rota que não tenha sido configurada previamente
+    // erro 404
     res.json({message: "Rota não encontrada!"})
 })
 

@@ -22,6 +22,7 @@
 # Comandos
 
 obs -> o local host ta sendo usado apenas com o http
+para usar a pasta do projeto do Thunder client -> sttings -> ligar o primeiro icone
 
 
 ### NPM
