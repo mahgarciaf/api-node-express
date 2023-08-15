@@ -1,4 +1,6 @@
 import express from 'express'
+import listUsers from '../controllers/user/listUsers.js'
+import getUser from '../controllers/user/getuser.js'
 
 const router = express.Router()
 
@@ -11,6 +13,10 @@ router.get('/', (req, res) => {
         message: "Usuários:",
         dados: dados})
 })
+
+router.get('/list', listUsers)
+
+router.get('/user', getUser)
 
 router.post('/', (req, res) => {
     // pegar os dados / create
