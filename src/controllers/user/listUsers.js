@@ -7,4 +7,4 @@ const listUsers = (req, res) => {
     res.json(users)
 }
 
-export default listUser
+export default listUsers
